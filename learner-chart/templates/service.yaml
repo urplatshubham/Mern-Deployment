@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Chart.Name }}-service
+spec:
+  type: {{ .Values.service.type }}
+  selector:
+    app: {{ .Chart.Name }}
+  ports:
+  - name: frontend
+    port: {{ .Values.service.frontendPort }}
+    targetPort: {{ .Values.service.frontendPort }}
+  - name: backend
+    port: {{ .Values.service.backendPort }}
+    targetPort: {{ .Values.service.backendPort }}

@@ -1,0 +1,12 @@
+replicaCount: 2
+
+image:
+  frontend: shubhamrajak2508/learner-frontend:1.0
+  backend: shubhamrajak2508/learner-backend:1.0
+
+service:
+  type: NodePort
+  frontendPort: 80
+  backendPort: 3000
+
+resources: {}
